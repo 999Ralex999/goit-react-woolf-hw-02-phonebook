@@ -24,7 +24,7 @@ export class App extends Component {
     }
   }
 
-  fillContacts = () => {
+  fillContacts = contact => {
     if (
       this.state.contacts.find(
         item => item.name.toLowerCase() === contact.name.toLowerCase()
@@ -51,7 +51,7 @@ export class App extends Component {
       contact.name.toLowerCase().includes(this.state.filter.toLowerCase())
     );
 
-  deleteContact = () => {
+  deleteContact = contactId => {
     this.setState(prevState => {
       return {
         contacts: prevState.contacts.filter(({ id }) => id !== contactId),
